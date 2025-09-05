@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TESDA Portal — File Manager & QR Generator</title>
+  <link rel="icon" type="image/png" href="assets/tesdalogo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div class="brand">
+        <img src="assets/tesdalogo.png" alt="TESDA" class="logo" width="40" height="40" onerror="this.style.display='none'">
+        <h1>TESDA Portal</h1>
+      </div>
+      <nav class="nav">
+        <a href="#services">Services</a>
+        <a href="#filemanager">File Manager</a>
+        <a href="#qr">QR Generator</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="hero" class="hero">
+      <h2>TESDA Services — File Management & QR Tools</h2>
+      <p>Upload and search files in your browser. Generate QR codes for text or URLs.</p>
+    </section>
+
+    <section id="services" class="card">
+      <h3>TESDA Services</h3>
+      <ul>
+        <li>Skills Assessment & Certification Info</li>
+        <li>Training Programs and Courses</li>
+        <li>Scholarship Registration (local)</li>
+        <li>Document management for personal use</li>
+      </ul>
+    </section>
+
+    <section id="filemanager" class="card">
+      <h3>File Manager (stored locally in your browser)</h3>
+      <div class="upload-area" id="uploadArea">
+        <input type="file" id="fileInput" multiple />
+        <div class="upload-hint">
+          Drag & drop files here or click to select. Files are stored locally for now.
+        </div>
+      </div>
+
+      <div class="controls">
+        <input type="search" id="searchInput" placeholder="Search files by name or tag..." />
+        <button id="clearAllBtn" class="danger">Delete All (clear DB)</button>
+      </div>
+
+      <div id="fileList" class="file-list" aria-live="polite"></div>
+    </section>
+
+    <section id="qr" class="card">
+      <h3>QR Code Generator</h3>
+      <label>Text or URL</label>
+      <input type="text" id="qrText" placeholder="https://example.com or any text" />
+      <div class="qr-controls">
+        <button id="generateQrBtn">Generate QR</button>
+        <button id="downloadQrBtn" disabled>Download QR</button>
+      </div>
+      <div id="qrPreview" class="qr-preview" aria-hidden="true"></div>
+      <p class="note">Tip: To create a QR that links to an uploaded file for others to download, host the file publicly (e.g., upload file to your Google Drive make it public and paste that URL here.</p>
+    </section>
+
+    <section id="about" class="card">
+      <h3>About</h3>
+      <p>The Technical Education and Skills Development Authority (TESDA) provides direction, policies,
+            programs, and standards toward quality technical education and skills development.
+            TESDA Region VII - Dumaguete City Provincial Office is committed to empowering individuals 
+            through skills training, assessment, certification, and scholarship opportunities.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>TESDA Portal © <span id="year"></span></small>
+    </div>
+  </footer>
+
+  <!-- QR Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
